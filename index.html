@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Alexander & Wanda · Invitación</title>
+  <meta name="description" content="Invitación a la boda de Alexander y Wanda" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+  <!-- ============ PORTADA ============ -->
+  <div id="cover" class="cover">
+    <div class="cover-inner">
+      <div class="corners"></div>
+
+      <p class="cover-welcome">Bienvenidos a la invitación de</p>
+
+      <div class="monogram-wrap">
+        <div class="rule rule-32"></div>
+        <h1 class="monogram monogram-xl">A<span class="amp">&amp;</span>W</h1>
+        <div class="rule rule-32"></div>
+      </div>
+
+      <h2 class="names">Alexander &amp; Wanda</h2>
+
+      <svg class="cover-flourish" viewBox="0 0 48 32" fill="currentColor">
+        <path d="M24 8C20 4 14 2 8 4C4 6 2 10 4 14C6 18 12 20 16 18C18 17 19 15 18 13C17 11 14 10 12 12" stroke="currentColor" stroke-width="1" fill="none" />
+        <path d="M24 8C28 4 34 2 40 4C44 6 46 10 44 14C42 18 36 20 32 18C30 17 29 15 30 13C31 11 34 10 36 12" stroke="currentColor" stroke-width="1" fill="none" />
+        <circle cx="24" cy="6" r="2" />
+      </svg>
+
+      <p class="cover-note">La música de fondo es parte de la experiencia</p>
+
+      <div class="cover-buttons">
+        <button class="btn btn-wide" data-enter="music">Ingresar con música</button>
+        <button class="btn btn-wide" data-enter="silent">Ingresar sin música</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ INVITACIÓN ============ -->
+  <audio id="music" loop preload="auto" playsinline></audio>
+  <div id="ytHolder" class="yt-holder" aria-hidden="true"></div>
+
+  <button id="musicToggle" class="music-toggle" aria-label="Activar o silenciar música" hidden>
+    <svg class="icon-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <svg class="icon-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>
+  </button>
+
+  <main id="invitation" class="invitation" hidden>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-info" data-anim="right">
+        <div class="corners"></div>
+        <div class="center">
+          <p class="hero-date">18.12.2026</p>
+          <h2 class="monogram monogram-lg">A<span class="amp">&amp;</span>W</h2>
+          <p class="names names-hero">Alexander &amp; Wanda</p>
+          <svg class="hero-drop" viewBox="0 0 16 24" fill="currentColor">
+            <path d="M8 0C8 0 2 8 2 14C2 18 4.5 22 8 22C11.5 22 14 18 14 14C14 8 8 0 8 0Z" opacity="0.6" />
+          </svg>
+          <p class="hero-quote">“Las muchas aguas no podrán apagar el amor, <br />ni lo ahogarán los ríos.”</p>
+          <p class="hero-verse">Cantares 8:7</p>
+          <svg class="hero-flourish" viewBox="0 0 64 32" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M32 16C28 12 22 8 16 10C12 12 10 16 12 20C14 22 18 22 20 20" />
+            <path d="M32 16C36 12 42 8 48 10C52 12 54 16 52 20C50 22 46 22 44 20" />
+            <path d="M28 24Q32 28 36 24" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuenta regresiva -->
+    <section class="section section-countdown" data-section="countdown">
+      <div class="section-divider"></div>
+      <div class="countdown" data-anim="up">
+        <h3 class="countdown-title">Falta</h3>
+        <div class="countdown-units">
+          <div class="unit"><span class="unit-value" id="cd-days">00</span><p class="unit-label">días</p></div>
+          <div class="unit-sep"></div>
+          <div class="unit"><span class="unit-value" id="cd-hours">00</span><p class="unit-label">hs</p></div>
+          <div class="unit-sep"></div>
+          <div class="unit"><span class="unit-value" id="cd-minutes">00</span><p class="unit-label">min</p></div>
+          <div class="unit-sep"></div>
+          <div class="unit"><span class="unit-value" id="cd-seconds">00</span><p class="unit-label">seg</p></div>
+        </div>
+        <svg class="countdown-heart animate-heartbeat" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </div>
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- Invitados (solo aparece si el enlace trae ?nombres=...) -->
+    <section class="section section-guests" data-section="guests" hidden>
+      <div class="guests" data-anim="up">
+        <div class="guests-count"><span id="guestsTotal">0</span></div>
+        <h3 class="guests-title">Invitados</h3>
+        <p class="guests-companions" id="guestsCompanions" hidden></p>
+        <div class="guests-list" id="guestsList"></div>
+        <p class="guests-note">Tu presencia es lo más importante. ¡No faltes!</p>
+      </div>
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- Eventos -->
+    <!-- Ceremonia -->
+    <section class="section section-events" data-section="events">
+      <div class="events">
+        <article class="event-card" data-anim="up-30">
+          <div class="frame">
+            <div class="frame-lines" aria-hidden="true">
+              <div class="fl-outer"></div><div class="fl-inner"></div>
+              <i class="dot dot-o tl"></i><i class="dot dot-o tr"></i><i class="dot dot-o bl"></i><i class="dot dot-o br"></i>
+              <i class="dot dot-i tl"></i><i class="dot dot-i tr"></i><i class="dot dot-i bl"></i><i class="dot dot-i br"></i>
+              <div class="fl-h top"></div><div class="fl-h bottom"></div><div class="fl-v left"></div><div class="fl-v right"></div>
+            </div>
+            <div class="frame-content">
+              <div class="event-icon"><img src="assets/icons/anillos.png" alt="Anillos" class="icon-rings animate-gentle-bounce" /></div>
+              <h3 class="event-title">Ceremonia</h3>
+              <div class="event-rule"></div>
+              <h4 class="event-label">Día</h4>
+              <p class="event-text event-text-day">Viernes 18 de diciembre de 2026<br />6:00 p. m.</p>
+              <h4 class="event-label">Lugar</h4>
+              <p class="event-text">L’Monani Restaurant</p>
+              <a class="btn btn-event" id="confirmBtn" href="#" target="_blank" rel="noopener noreferrer">Confirmar asistencia</a>
+              <div class="deadline">
+                <p class="deadline-label">Fecha límite para confirmar</p>
+                <div class="deadline-row"><span class="deadline-line"></span><p class="deadline-date">5 de diciembre</p><span class="deadline-line"></span></div>
+              </div>
+              <h4 class="event-label">Dirección</h4>
+              <p class="event-text">Higüey, República Dominicana</p>
+              <a class="btn btn-event btn-last" href="https://maps.app.goo.gl/N33ctth3D9cXpGEF9?g_st=iw" target="_blank" rel="noopener noreferrer">¿Cómo llegar?</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Regalos -->
+    <section class="section section-gifts" data-section="gifts">
+      <div class="section-divider"></div>
+      <div class="block" data-anim="up">
+        <div class="gold-divider"></div>
+        <h3 class="block-title block-title-plain">Regalos</h3>
+        <p class="block-text">Si deseas regalarnos algo más que tu hermosa presencia...</p>
+        <div class="block-icon"><img src="assets/icons/regalo.png" alt="Regalo" class="icon-img animate-gentle-bounce" /></div>
+        <button class="btn btn-lg" type="button" data-modal="modalGifts">Ver más</button>
+      </div>
+      <div class="section-divider"></div>
+    </section>
+
+    <!-- Detalles -->
+    <section class="section section-details" data-section="details">
+      <div class="block block-details" data-anim="up">
+        <div class="gold-divider"></div>
+        <h3 class="block-title">Detalles</h3>
+        <p class="block-text">Todo lo que necesitas saber para acompañarnos</p>
+      </div>
+      <div class="details-grid">
+        <article class="detail-card" data-anim="up-30">
+          <div class="detail-icon"><img src="assets/icons/subir-foto.png" alt="" class="animate-gentle-bounce" /></div>
+          <h4 class="detail-title">Comparte tu foto</h4>
+          <p class="detail-text">Usa nuestro hashtag <span class="detail-hashtag">#alexanderywanda</span></p>
+          <a class="pill" href="https://photos.app.goo.gl/PHcq2HzTYW3qASzQ8" target="_blank" rel="noopener noreferrer">Sube tu foto</a>
+        </article>
+
+        <article class="detail-card" data-anim="up-30">
+          <div class="detail-icon">
+            <svg class="detail-svg icon-hanger animate-gentle-bounce" viewBox="6 3 88 72" aria-hidden="true">
+              <defs>
+                <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#e8cd80" />
+                  <stop offset="0.5" stop-color="#c9a447" />
+                  <stop offset="1" stop-color="#a8862f" />
+                </linearGradient>
+                <radialGradient id="ivoryFill" cx="0.5" cy="0.4" r="0.7">
+                  <stop offset="0" stop-color="#fffdf7" />
+                  <stop offset="1" stop-color="#f3e7cc" />
+                </radialGradient>
+              </defs>
+              <g fill="none" stroke="url(#goldStroke)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <!-- gancho -->
+                <path d="M50 33 V28.5 C50 25.5 53.5 23.5 56.5 20.5 C60.5 16.5 60 9.5 55 6.8 C49.5 4 43 7.2 43 13" />
+                <!-- cuerpo del gancho -->
+                <path d="M50 33 C44 33 40.5 36.5 34.5 40.5 L12.5 53 C6.5 56.5 8.5 65 14.5 62.5 L39 50.5 C45.5 47.5 54.5 47.5 61 50.5 L85.5 62.5 C91.5 65 93.5 56.5 87.5 53 L65.5 40.5 C59.5 36.5 56 33 50 33 Z" fill="url(#ivoryFill)" />
+                <path d="M40 44.5 C46 41.5 54 41.5 60 44.5" stroke-width="1.4" opacity="0.7" />
+                <!-- corbatín -->
+                <g transform="translate(50 59) scale(1.35) translate(-50 -58)" stroke-width="1.8">
+                <path d="M45.5 58 L31.5 49.5 C29 48.2 27.5 49.5 27.5 52 V64 C27.5 66.5 29 67.8 31.5 66.5 Z" fill="url(#ivoryFill)" />
+                <path d="M54.5 58 L68.5 49.5 C71 48.2 72.5 49.5 72.5 52 V64 C72.5 66.5 71 67.8 68.5 66.5 Z" fill="url(#ivoryFill)" />
+                <path d="M33.5 57.5 Q39.5 55.8 45 57.6 M33.5 58.5 Q39.5 60.2 45 58.4" stroke-width="1.2" opacity="0.75" />
+                <path d="M66.5 57.5 Q60.5 55.8 55 57.6 M66.5 58.5 Q60.5 60.2 55 58.4" stroke-width="1.2" opacity="0.75" />
+                <rect x="45" y="53.5" width="10" height="9" rx="2.2" fill="#f7eed8" />
+                              </g>
+              </g>
+            </svg>
+          </div>
+          <h4 class="detail-title">Código de vestimenta</h4>
+          <p class="detail-text">Elegante</p>
+          <button class="pill" type="button" data-modal="modalDress">Ver más</button>
+        </article>
+
+        <article class="detail-card" data-anim="up-30">
+          <div class="detail-icon">
+            <svg class="detail-svg" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="5" />
+              <circle cx="32" cy="25" r="7.5" fill="currentColor" />
+              <path d="M17.5 46.5c2.5-7.5 8-11.5 14.5-11.5s12 4 14.5 11.5z" fill="currentColor" />
+              <line x1="48" y1="13" x2="15" y2="52" class="slash-gap" stroke-width="10" stroke-linecap="round" />
+              <line x1="48" y1="13" x2="15" y2="52" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h4 class="detail-title">Tips y notas</h4>
+          <p class="detail-text">Información importante</p>
+          <button class="pill" type="button" data-modal="modalTips">Ver más</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pie de página: solo las iniciales -->
+    <footer class="section section-footer" data-section="footer">
+      <div class="section-divider"></div>
+      <div class="footer">
+        <div class="footer-brand">
+          <div class="rule rule-20"></div>
+          <h4 class="monogram monogram-sm">A<span class="amp">&amp;</span>W</h4>
+          <div class="rule rule-20 rule-after"></div>
+          <p class="footer-date">18 · 12 · 2026</p>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+    </footer>
+  </main>
+
+  <!-- Ventana: Código de vestimenta -->
+  <div class="modal" id="modalDress" role="dialog" aria-modal="true" aria-labelledby="modalDressTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+      <div class="gold-divider"></div>
+      <h3 class="modal-title" id="modalDressTitle">Código de vestimenta</h3>
+      <p class="modal-highlight">Elegante</p>
+      <p class="modal-text">El color blanco y los tonos similares están reservados para la novia.</p>
+      <div class="swatches">
+        <figure class="swatch"><span class="swatch-circle" style="--c:#ffffff"></span><figcaption>Blanco</figcaption></figure>
+        <figure class="swatch"><span class="swatch-circle" style="--c:#f8f3e6"></span><figcaption>Marfil</figcaption></figure>
+        <figure class="swatch"><span class="swatch-circle" style="--c:#efe4cf"></span><figcaption>Crema</figcaption></figure>
+      </div>
+      <p class="modal-note">Colores no permitidos</p>
+    </div>
+  </div>
+
+  <!-- Ventana: Tips y notas -->
+  <div class="modal" id="modalTips" role="dialog" aria-modal="true" aria-labelledby="modalTipsTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+      <div class="gold-divider"></div>
+      <h3 class="modal-title" id="modalTipsTitle">Tips y notas</h3>
+      <p class="modal-highlight">Solo adultos</p>
+      <p class="modal-text">Amamos a los niños, pero en esta ocasión hemos decidido celebrar solo con adultos.</p>
+    </div>
+  </div>
+
+  <!-- Ventana: Mesa de regalos -->
+  <div class="modal" id="modalGifts" role="dialog" aria-modal="true" aria-labelledby="modalGiftsTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" aria-label="Cerrar" data-close>&times;</button>
+      <div class="gold-divider"></div>
+      <h3 class="modal-title" id="modalGiftsTitle">Mesa de regalos</h3>
+      <p class="gift-intro">Si deseas hacernos un regalo, puedes transferir a cualquiera de estas cuentas:</p>
+      <div class="gift-account">
+        <p class="gift-holder">Wanda Rodríguez</p>
+        <div class="gift-row">
+          <div class="gift-row-info"><span class="gift-bank">Banco Popular · Ahorros</span><span class="gift-number">817452659</span></div>
+          <button class="gift-copy" type="button" data-copy="817452659" aria-label="Copiar cuenta de Banco Popular · Ahorros">Copiar</button>
+        </div>
+        <div class="gift-row">
+          <div class="gift-row-info"><span class="gift-bank">Banreservas · Ahorros</span><span class="gift-number">9602856300</span></div>
+          <button class="gift-copy" type="button" data-copy="9602856300" aria-label="Copiar cuenta de Banreservas · Ahorros">Copiar</button>
+        </div>
+      </div>
+      <p class="gift-thanks">¡Gracias por acompañarnos!</p>
+    </div>
+  </div>
+
+  <!-- Plantilla de esquinas ornamentales (se copia con JS) -->
+  <template id="cornersTpl">
+    <svg class="corner c-tl" viewBox="0 0 64 64" fill="none">
+      <path d="M4 4 L4 24 Q4 4 24 4 L4 4Z" stroke="currentColor" stroke-width="1" fill="none" />
+      <circle cx="8" cy="8" r="3" fill="currentColor" opacity="0.5" />
+      <path d="M12 4 Q8 8 4 12" stroke="currentColor" stroke-width="0.5" fill="none" />
+      <path d="M20 4 Q10 10 4 20" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4" />
+    </svg>
+    <svg class="corner c-tr" viewBox="0 0 64 64" fill="none">
+      <path d="M60 4 L60 24 Q60 4 40 4 L60 4Z" stroke="currentColor" stroke-width="1" fill="none" />
+      <circle cx="56" cy="8" r="3" fill="currentColor" opacity="0.5" />
+      <path d="M52 4 Q56 8 60 12" stroke="currentColor" stroke-width="0.5" fill="none" />
+      <path d="M44 4 Q54 10 60 20" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4" />
+    </svg>
+    <svg class="corner c-bl" viewBox="0 0 64 64" fill="none">
+      <path d="M4 60 L4 40 Q4 60 24 60 L4 60Z" stroke="currentColor" stroke-width="1" fill="none" />
+      <circle cx="8" cy="56" r="3" fill="currentColor" opacity="0.5" />
+      <path d="M12 60 Q8 56 4 52" stroke="currentColor" stroke-width="0.5" fill="none" />
+    </svg>
+    <svg class="corner c-br" viewBox="0 0 64 64" fill="none">
+      <path d="M60 60 L60 40 Q60 60 40 60 L60 60Z" stroke="currentColor" stroke-width="1" fill="none" />
+      <circle cx="56" cy="56" r="3" fill="currentColor" opacity="0.5" />
+      <path d="M52 60 Q56 56 60 52" stroke="currentColor" stroke-width="0.5" fill="none" />
+    </svg>
+  </template>
+
+  <!-- Plantilla del divisor dorado -->
+  <template id="goldDividerTpl">
+    <div class="gd-line gd-left"></div>
+    <div class="gd-center">
+      <span class="gd-dot gd-dot-lg"></span><span class="gd-dot gd-dot-sm"></span>
+      <svg class="gd-leaf" viewBox="0 0 24 16" fill="currentColor"><path d="M12 2C8 2 4 6 2 8C4 10 8 14 12 14C16 14 20 10 22 8C20 6 16 2 12 2ZM12 4C10 6 8 8 12 12C16 8 14 6 12 4Z" /></svg>
+      <span class="gd-dot gd-dot-sm"></span><span class="gd-dot gd-dot-lg"></span>
+    </div>
+    <div class="gd-line gd-right"></div>
+  </template>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
