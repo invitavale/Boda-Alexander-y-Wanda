@@ -534,14 +534,36 @@ body.modal-open { overflow: hidden; }
 .gift-copy.is-copied { background: hsl(82 18% 33%); color: #fff; }
 .gift-thanks { font-family: var(--font-heading); font-style: italic; font-size: 1.05rem; color: hsl(var(--muted-foreground)); margin-top: 1rem; }
 
-/* ---------- Portada principal con foto difuminada ---------- */
-.hero-info { isolation: isolate; overflow: hidden; }
-.hero-info::before {
-  content: ""; position: absolute; inset: -30px; z-index: -2;
+/* ---------- Pantalla de entrar (con/sin música): foto difuminada ---------- */
+.cover { isolation: isolate; }
+.cover::before {
+  content: ""; position: fixed; inset: -40px; z-index: -2;
   background: url("assets/img/portada.jpg") center 30% / cover no-repeat;
   filter: blur(6px) saturate(0.85);
+  transform: scale(1.05);
+}
+.cover::after {
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background: hsl(36 40% 88% / 0.72);
+}
+
+/* ---------- Portada principal: foto nítida ---------- */
+.hero-info { isolation: isolate; overflow: hidden; }
+.hero-info::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: url("assets/img/portada.jpg") center 30% / cover no-repeat;
 }
 .hero-info::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: hsl(40 50% 95% / 0.72);
+  background: hsl(40 50% 95% / 0.6);
 }
+.hero-info .hero-date, .hero-info .monogram, .hero-info .names-hero,
+.hero-info .hero-quote, .hero-info .hero-verse {
+  text-shadow: 0 0 6px hsl(40 60% 97%), 0 0 14px hsl(40 60% 97% / 0.9), 0 0 24px hsl(40 60% 97% / 0.7);
+}
+.hero-info .hero-date, .hero-info .hero-verse { color: hsl(42 62% 38%); }
+.hero-info .hero-quote { color: hsl(84 18% 28%); }
+
+/* Texto de la portada principal un poco más abajo */
+.hero-info { padding-top: calc(4rem + 18vh); padding-bottom: 3rem; }
+@media (min-width: 768px) { .hero-info { padding-top: 10rem; } }
