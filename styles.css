@@ -567,3 +567,19 @@ body.modal-open { overflow: hidden; }
 /* Texto de la portada principal un poco más abajo */
 .hero-info { padding-top: calc(4rem + 18vh); padding-bottom: 3rem; }
 @media (min-width: 768px) { .hero-info { padding-top: 10rem; } }
+
+/* Portada principal: más legible (foto clara arriba, zona del texto más suave) */
+.hero-info::after {
+  background: linear-gradient(to bottom,
+    hsl(40 50% 95% / 0.25) 0%,
+    hsl(40 50% 95% / 0.45) 22%,
+    hsl(40 50% 95% / 0.82) 34%,
+    hsl(40 50% 95% / 0.86) 100%);
+}
+.hero-info .hero-date { color: hsl(42 70% 32%); font-weight: 600; }
+.hero-info .monogram { color: hsl(84 25% 22%); }
+.hero-info .monogram .amp { color: hsl(42 70% 38%); }
+.hero-info .names-hero { color: hsl(84 25% 16%); }
+.hero-info .hero-quote { color: hsl(84 22% 20%); }
+.hero-info .hero-verse { color: hsl(42 70% 30%); font-weight: 700; }
+.hero-info .hero-drop, .hero-info .hero-flourish { color: hsl(42 70% 38%); opacity: 0.9; }
