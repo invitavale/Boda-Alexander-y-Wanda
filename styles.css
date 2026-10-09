@@ -533,3 +533,15 @@ body.modal-open { overflow: hidden; }
 .gift-copy { flex: 0 0 auto; background: transparent; border: 1px solid hsl(82 18% 33%); color: hsl(82 18% 33%); border-radius: 999px; padding: 0.3rem 0.85rem; font-family: var(--font-body); font-size: 0.78rem; cursor: pointer; }
 .gift-copy.is-copied { background: hsl(82 18% 33%); color: #fff; }
 .gift-thanks { font-family: var(--font-heading); font-style: italic; font-size: 1.05rem; color: hsl(var(--muted-foreground)); margin-top: 1rem; }
+
+/* ---------- Portada principal con foto difuminada ---------- */
+.hero-info { isolation: isolate; overflow: hidden; }
+.hero-info::before {
+  content: ""; position: absolute; inset: -30px; z-index: -2;
+  background: url("assets/img/portada.jpg") center 30% / cover no-repeat;
+  filter: blur(6px) saturate(0.85);
+}
+.hero-info::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: hsl(40 50% 95% / 0.72);
+}
