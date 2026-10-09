@@ -5,8 +5,8 @@
   "use strict";
 
   // ================= CONFIGURACIÓN =================
-  // Fecha y hora de la boda: viernes 18 de diciembre de 2026, 6:00 p. m.
-  var WEDDING_DATE = new Date("2026-12-18T18:00:00");
+  // Fecha y hora de la boda: jueves 17 de diciembre de 2026, 6:00 p. m.
+  var WEDDING_DATE = new Date("2026-12-17T18:00:00");
 
   // Música de fondo:
   //  - YOUTUBE_ID: el video de YouTube que suena de fondo.
@@ -79,7 +79,7 @@
     }
     var mensaje =
       "¡Hola! Confirmo mi asistencia a la boda de Alexander y Wanda " +
-      "el viernes 18 de diciembre a las 6:00 p. m." +
+      "el jueves 17 de diciembre a las 6:00 p. m." +
       (nombres.length ? "\n\nNombre: " + quien : "") +
       "\n\n¡Gracias por la invitación!";
     $("#confirmBtn").href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(mensaje);
